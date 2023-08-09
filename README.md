@@ -11,3 +11,6 @@ In this project, using the SOM algorithm, we want to pull out the custom ideas t
 ## Installation and Setup Instructions
 
 ## Reflection
+
+## TODO
+- [ ] Dokerize python Project
