@@ -2,6 +2,7 @@
 import  numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
 
 # import path file for read path required
 from Path_file import DATA_PATH
