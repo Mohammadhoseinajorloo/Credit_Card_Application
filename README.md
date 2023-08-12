@@ -7,9 +7,9 @@ In this project, using the SOM algorithm, we want to pull out the custom ideas t
 ## Project Status
 
 This project was originally created to test small slills:
-- clean coding
-- correct commenting in the code
-- implementation of a code in the field of unsupervised deep learning algorithms.
+ - clean coding
+ - correct commenting in the code
+ - implementation of a code in the field of unsupervised deep learning algorithms.
 The implemented code is basically **OOP(OBJECT ORIENTED PROGGRAMMING)** and is a sample code in [kaggle](https://www.kaggle.com/code/abhikalpsrivastava15/dl-a-z-som-fraud-detector/comments).
 I will ve glad to cooperate with in this work.
 Be sure to comment your opinions and criticisms so that i can learn more from you :)
@@ -21,4 +21,4 @@ Be sure to comment your opinions and criticisms so that i can learn more from yo
 ## Reflection
 
 ## TODO
-- [ ] Dokerize python Project
+- [ ] Dockerize python Project
