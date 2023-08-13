@@ -6,8 +6,6 @@ from minisom import MiniSom
 from pylab import bone, pcolor, colorbar, plot, show
 import numpy as np
 
-# import path file for read path required
-from Path_file import DATA_PATH
 
 # faind function for rean data intended for the project
 def read_data(PATH):
@@ -82,21 +80,3 @@ def _frauds (mappings):
 
     """
     return mappings[(1, 1)]
-
-
-def main():
-    """
-    This functon is basically our main function that executes our program
-    """
-    try:
-        X, y = X_y (read_data(DATA_PATH))
-        X = scaling (X)
-        som = _som (X)
-        ploting (X, y, som, show=False)
-        frauds = _frauds (mappings(X, som))
-        invers_scale_frauds = inversing (X, frauds)
-    except ValueError:
-        return 'please try agein...'
-
-if __name__ == '__main__':
-    main()
