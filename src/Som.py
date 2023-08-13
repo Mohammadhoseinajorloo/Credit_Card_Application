@@ -1,10 +1,10 @@
 # import librares
-import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
 from minisom import MiniSom
 from pylab import bone, pcolor, colorbar, plot, show
+import numpy as np
 
 # import path file for read path required
 from Path_file import DATA_PATH
@@ -28,19 +28,18 @@ def X_y(dataset):
     return X, y
 
 
-def scaling(array, mode=None):
+def scaling(array):
     """
 
     """
     MinMax_Scaler = MinMaxScaler(feature_range=(0, 1))
-    if mode == "invers":
-        X = MinMax_Scaler.inverse_transform(array)
-    elif mode == "scaler":
-        X = MinMax_Scaler.fit_transform(array)
-    else:
-        pass
+    return MinMax_Scaler.fit_transform(array)
 
-    return X
+
+def inversing (X, array):
+    MinMax_Scaler = MinMaxScaler(feature_range=(0, 1))
+    scale = MinMax_Scaler.fit(X)
+    return scale.inverse_transform(np.array(array))
 
 
 def _som(X):
@@ -89,14 +88,15 @@ def main():
     """
     This functon is basically our main function that executes our program
     """
-    X, y = X_y (read_data(DATA_PATH))
-    X = scaling (array=X, mode='scaler')
-    som = _som (X)
-    ploting (X, y, som, show=False)
-    frauds = _frauds (mappings(X, som))
-    frauds = scaling (array=frauds, mode="invers")
-    print(frauds)
-
+    try:
+        X, y = X_y (read_data(DATA_PATH))
+        X = scaling (X)
+        som = _som (X)
+        ploting (X, y, som, show=False)
+        frauds = _frauds (mappings(X, som))
+        invers_scale_frauds = inversing (X, frauds)
+    except ValueError:
+        return 'please try agein...'
 
 if __name__ == '__main__':
     main()
