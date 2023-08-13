@@ -21,4 +21,7 @@ Be sure to comment your opinions and criticisms so that i can learn more from yo
 ## Reflection
 
 ## TODO
+- [x] Detach the main file
 - [ ] Dockerize python Project
+- [ ] addition save model in code
+- [ ] Detach the imaging file
