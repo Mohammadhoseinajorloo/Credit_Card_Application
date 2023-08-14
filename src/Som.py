@@ -1,11 +1,11 @@
 # import librares
-import matplotlib.pyplot as plt
-import pandas as pd
-from sklearn.preprocessing import MinMaxScaler
-from minisom import MiniSom
-from pylab import bone, pcolor, colorbar, plot, show
 import numpy as np
-
+import pandas as pd
+from minisom import MiniSom
+from Path_file import PLOT_PATH
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import MinMaxScaler
+from pylab import bone, pcolor, colorbar, plot, show
 
 # faind function for rean data intended for the project
 def read_data(PATH):
@@ -60,12 +60,16 @@ def ploting (X, y, som, show=[True, False]):
     pcolor(som.distance_map().T)
     for i, x in enumerate(X):
         w = som.winner(x)
-        plot(w[0] + .5, w[1] + .5, marker[y[i]], markeredgecolor=colors[y[i]],
+        plot (w[0] + .5, w[1] + .5, marker[y[i]], markeredgecolor=colors[y[i]],
          markerfacecolor='None', markersize=10, markeredgewidth=2)
     if show == True:
+        plt.savefig (PLOT_PATH)
         plt.show()
+    elif show == False:
+        plt.savefig (PLOT_PATH)
     else:
         pass
+
 
 
 def mappings (X, som):
