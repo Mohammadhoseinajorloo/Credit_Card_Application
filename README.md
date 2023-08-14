@@ -16,7 +16,7 @@ Be sure to comment your opinions and criticisms so that i can learn more from yo
 
 ## Project Screen Shot(s)
 
-[image/PLOT.png]
+![](image/PLOT.png)
 
 ## How to Use
 
