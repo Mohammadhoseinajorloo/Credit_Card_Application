@@ -16,12 +16,21 @@ Be sure to comment your opinions and criticisms so that i can learn more from yo
 
 ## Project Screen Shot(s)
 
-## Installation and Setup Instructions
+![PLOT](C:\Users\MSI\Desktop\mohammad\TMP\W\Credit_Card_Applications\image\PLOT.png)
+
+## How to Use
+
+1. clone github repository:
+`git clon https://github.com/Mohammadhoseinajorloo/Credit_Card_Application.git`
+2. run mine file:
+`python src/main.py <DATA_PATH> show=<SHOW_PLOT_MODE>`
+ - if SHOW_PLOT_MODE = True display plot and save image.png into image file
+ - if SHOW_PLOT_MODE = False display not plot and save image.png into image file -> defult
 
 ## Reflection
 
 ## TODO
 - [x] Detach the main file
+- [x] read path on the command line
 - [ ] Dockerize python Project
 - [ ] addition save model in code
-- [ ] Detach the imaging file
