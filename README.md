@@ -16,7 +16,7 @@ Be sure to comment your opinions and criticisms so that i can learn more from yo
 
 ## Project Screen Shot(s)
 
-![PLOT](C:\Users\MSI\Desktop\mohammad\TMP\W\Credit_Card_Applications\image\PLOT.png)
+[image/PLOT.png]
 
 ## How to Use
 
