@@ -28,8 +28,8 @@ Be sure to comment your opinions and criticisms so that i can learn more from yo
 - model can be loaded as follows:
 ```
 with open('som.p', 'rb') as infile:
-    som = pickle.load(infile)
-
+    som = pickle.load(infile)  
+    
     ```
 
 
