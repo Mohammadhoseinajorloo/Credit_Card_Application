@@ -26,10 +26,10 @@ Be sure to comment your opinions and criticisms so that i can learn more from yo
 `python src/main.py <DATA_PATH>`
 
 - model can be loaded as follows:
-```with open('som.p', 'rb') as infile:
-    som = pickle.load(infile)  
-
-    ```
+```
+with open('som.p', 'rb') as infile:
+     som = pickle.load(infile)  
+```
 
 
 ## Reflection
