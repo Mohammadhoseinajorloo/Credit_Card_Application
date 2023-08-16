@@ -1,7 +1,7 @@
 # import librares
 import sys
-from Path_file import DATA_PATH
-from Som import _som, X_y, read_data, scaling, ploting, _frauds, mappings, inversing
+from path_file import DATA_PATH
+from som import _som, X_y, read_data, scaling, ploting, _frauds, mappings, inversing
 
 
 
@@ -14,7 +14,7 @@ def main():
         X = scaling (X)
         som = _som (X)
         frauds = _frauds (mappings(X, som))
-        ploting (X, y, som, bool(sys.argv[2]))
+        ploting (X, y, som)
         invers_scale_frauds = inversing (X, frauds)
     except ValueError:
         return 'please try agein...'
