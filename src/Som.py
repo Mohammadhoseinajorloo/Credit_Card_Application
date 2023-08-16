@@ -2,10 +2,11 @@
 import numpy as np
 import pandas as pd
 from minisom import MiniSom
-from Path_file import PLOT_PATH
+from path_file import PLOT_PATH, SAVE_MODEL
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
 from pylab import bone, pcolor, colorbar, plot, show
+import pickle
 
 # faind function for rean data intended for the project
 def read_data(PATH):
@@ -47,10 +48,12 @@ def _som(X):
     som = MiniSom(x = 10, y = 10, input_len=15, sigma=1.0, learning_rate=.5)
     som.random_weights_init(X)
     som.train_random(data=X, num_iteration=100)
+    with open(SAVE_MODEL, 'wb') as outfile:
+        pickle.dump(som, outfile)
     return som
 
 
-def ploting (X, y, som, show=[True, False]):
+def ploting (X, y, som):
     """
 
     """
@@ -62,14 +65,8 @@ def ploting (X, y, som, show=[True, False]):
         w = som.winner(x)
         plot (w[0] + .5, w[1] + .5, marker[y[i]], markeredgecolor=colors[y[i]],
          markerfacecolor='None', markersize=10, markeredgewidth=2)
-    if show == True:
         plt.savefig (PLOT_PATH)
-        plt.show()
-    elif show == False:
-        plt.savefig (PLOT_PATH)
-    else:
-        pass
-
+    
 
 
 def mappings (X, som):
