@@ -39,3 +39,4 @@ with open('som.p', 'rb') as infile:
 - [x] read path on the command line
 - [x] addition save model in code
 - [ ] Dockerize python Project
+- [ ] Overwrite code som.py as class
