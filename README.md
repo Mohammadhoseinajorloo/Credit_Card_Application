@@ -23,14 +23,20 @@ Be sure to comment your opinions and criticisms so that i can learn more from yo
 1. clone github repository:
 `git clon https://github.com/Mohammadhoseinajorloo/Credit_Card_Application.git`
 2. run mine file:
-`python src/main.py <DATA_PATH> show=<SHOW_PLOT_MODE>`
- - if SHOW_PLOT_MODE = True display plot and save image.png into image file
- - if SHOW_PLOT_MODE = False display not plot and save image.png into image file -> defult
+`python src/main.py <DATA_PATH>`
+
+- model can be loaded as follows:
+```
+with open('som.p', 'rb') as infile:
+    som = pickle.load(infile)
+
+    ```
+
 
 ## Reflection
 
 ## TODO
 - [x] Detach the main file
 - [x] read path on the command line
+- [x] addition save model in code
 - [ ] Dockerize python Project
-- [ ] addition save model in code
