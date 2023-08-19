@@ -29,13 +29,19 @@ def X_y(dataset):
 
 def scaling(array):
     """
-
+    This function chenge scale data to (0, 1)
+        - array : one array input and output scale array 
     """
     MinMax_Scaler = MinMaxScaler(feature_range=(0, 1))
     return MinMax_Scaler.fit_transform(array)
 
 
 def inversing (X, array):
+    """
+    This function inversing scale data be orginal data 
+        - X : X a array form input data
+        - array : scale data for inversing
+    """
     MinMax_Scaler = MinMaxScaler(feature_range=(0, 1))
     scale = MinMax_Scaler.fit(X)
     return scale.inverse_transform(np.array(array))
@@ -43,7 +49,8 @@ def inversing (X, array):
 
 def _som(X):
     """
-
+    This function training data by som algorithem 
+        - X : data training
     """
     som = MiniSom(x = 10, y = 10, input_len=15, sigma=1.0, learning_rate=.5)
     som.random_weights_init(X)
@@ -55,7 +62,10 @@ def _som(X):
 
 def ploting (X, y, som):
     """
-
+    This function plot result train data and visoalizing 
+        - X: array from input data train 
+        - y: array from label data 
+        - som: estimator or algotithem 
     """
     marker = ['o', 's']
     colors = ['r', 'g']
@@ -71,13 +81,16 @@ def ploting (X, y, som):
 
 def mappings (X, som):
     """
-
+    This functon map win_map by som algorithem 
+        - X: array from input data train  
+        - som: estimator or algotithem 
     """
     return som.win_map(X)
 
 
 def _frauds (mappings):
     """
-
+    This function finding frauds 
+        - mapping : mapping data 
     """
     return mappings[(1, 1)]
