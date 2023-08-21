@@ -1,7 +1,6 @@
 # import librares
 import sys
-from path_file import DATA_PATH
-from som import _som, X_y, read_data, scaling, ploting, _frauds, mappings, inversing
+from som import Som
 
 
 
@@ -10,12 +9,12 @@ def main():
     This functon is basically our main function that executes our program
     """
     try:
-        X, y = X_y (read_data(DATA_PATH))
-        X = scaling (X)
-        som = _som (X)
-        frauds = _frauds (mappings(X, som))
-        ploting (X, y, som)
-        invers_scale_frauds = inversing (X, frauds)
+        som = Som ()
+        som.scaling()
+        som_model = som.minisom_train()
+        frauds = som.frauds_person(som.mappings(som_model))
+        invers_scale_frauds = som.inversing(frauds)
+        som.ploting(som_model)
     except ValueError:
         return 'please try agein...'
 
