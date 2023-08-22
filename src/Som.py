@@ -17,7 +17,7 @@ class Som:
         """
         inisionlizing function
         """
-        self.X, self.y = Som.DATASET.iloc[:,:-1].values, Som.DATASET.iloc[:, -1].values 
+        self.X, self.y = self.DATASET.iloc[:,:-1].values, self.DATASET.iloc[:, -1].values 
          
 
     def scaling(self):
